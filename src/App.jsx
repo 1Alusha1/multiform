@@ -63,7 +63,7 @@ function App() {
         <form id="form" className="form">
           <div className="form-control">
             <button
-              className="hendlebutton"
+              className="hendlebutton tg"
               onClick={tgHendller}
               data-platform="telegram"
             >
@@ -75,7 +75,7 @@ function App() {
           </div>
           <div className="form-control">
             <button
-              className="hendlebutton"
+              className="hendlebutton wa"
               onClick={waHendller}
               data-platform="whatsapp"
             >

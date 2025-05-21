@@ -39,7 +39,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid rgb(255, 0, 242);
+  border: 2px solid #ffee00;
 }
 .header h1 {
   margin: 5px 0;
@@ -335,4 +335,14 @@ body {
 .thx-message {
   text-align: center;
   font-weight: bold;
+}
+
+.hendlebutton.tg {
+  background-color: #22a8e7;
+  border-color: #22a8e7;
+}
+
+.hendlebutton.wa {
+  background-color: #39c24d;
+  border-color: #39c24d; 
 }
