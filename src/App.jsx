@@ -57,7 +57,7 @@ function App() {
       <div className="container">
         <div className="header">
           <img src={avatar} alt="" className="avatar" />
-          <h1>Traffic G</h1>
+          <h1>Hot Leads</h1>
           <h3 className="center">Contact us in one of the messengers:</h3>
         </div>
         <form id="form" className="form">
