@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import avatar from "../src/assets/avatar.jpg";
+import avatar from "../src/assets/firelogo.jpg";
 import tg from "../src/assets/icons/tg.svg";
 import wa from "../src/assets/icons/whatsApp.svg";
 import sessionId from "./utils/sessionId";
