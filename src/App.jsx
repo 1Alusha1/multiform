@@ -35,6 +35,7 @@ function App() {
   }, []);
   const tgHendller = (e) => {
     e.preventDefault();
+    fbq('track', 'Lead');
     if (Boolean(utm.split) === true) {
       const splitedAccs = utm.bot.split("-");
       const randomAcc =
@@ -46,7 +47,7 @@ function App() {
   const waHendller = async (e) => {
     e.preventDefault();
     await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId);
-
+    fbq("track", "Lead");
     window.location.href =
       "https://api.whatsapp.com/send/?phone=6283115600982&text=" +
       `Hi! Send this personal code and we will contact you soon - start_${session}`;
