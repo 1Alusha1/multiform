@@ -8,6 +8,7 @@ export default () => {
     sheet: params.get("sheet"),
     tableId: params.get("tableId"),
     split: params.get("split"),
+    chatId: params.get("chatId"),
   };
 
   Object.keys(utmParams).forEach((key) => {

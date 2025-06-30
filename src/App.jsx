@@ -18,6 +18,7 @@ function App() {
     sheet: "",
     tableId: "",
     split: false,
+    chatId: "",
   });
   const [session, setSession] = useState();
 
@@ -45,7 +46,14 @@ function App() {
   };
   const waHendller = async (e) => {
     e.preventDefault();
-    await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId);
+    await saveHash(
+      utm.ad,
+      country.country,
+      session,
+      utm.sheet,
+      utm.tableId,
+      utm.chatId
+    );
 
     window.location.href =
       "https://api.whatsapp.com/send/?phone=6283115600982&text=" +
