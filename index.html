@@ -4,7 +4,168 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Traffic G</title>
+    <title>Hot Leads</title>
+    <script type="application/javascript">
+    function getCookie(name) {
+      var v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      return v ? v[2] : null;
+    }
+
+    function setCookie(name, value, days) {
+      var d = new Date();
+      d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+      document.cookie =
+        name + "=" + value + ";path=/;expires=" + d.toGMTString();
+    }
+
+    function getSubId() {
+      var params = new URLSearchParams(document.location.search.substr(1));
+      if (!"{subid}".match("{")) {
+        return "{subid}";
+      }
+      var clientSubid =
+        '<?php echo isset($client) ? $client->getSubid() : "" ?>';
+      if (!clientSubid.match(">")) {
+        return clientSubid;
+      }
+      if (params.get("_subid")) {
+        return params.get("_subid");
+      }
+      if (params.get("subid")) {
+        return params.get("subid");
+      }
+      if (getCookie("subid")) {
+        return getCookie("subid");
+      }
+    }
+
+    function getToken() {
+      var params = new URLSearchParams(document.location.search.substr(1));
+      if (!"{token}".match("{")) {
+        return "{token}";
+      }
+      var clientToken =
+        '<?php echo isset($client) ? $client->getToken() : "" ?>';
+      if (!clientToken.match(">")) {
+        return clientToken;
+      }
+      if (params.get("_token")) {
+        return params.get("_token");
+      }
+      if (params.get("token")) {
+        return params.get("token");
+      }
+      if (getCookie("token")) {
+        return getCookie("token");
+      }
+      return null;
+    }
+
+    function getaf() {
+      var params = new URLSearchParams(document.location.search.substr(1));
+      if (!"{aff}".match("{")) {
+        return "{aff}";
+      }
+      if (params.get("aff")) {
+        return params.get("aff");
+      }
+
+      if (getCookie("aff")) {
+        return getCookie("aff");
+      }
+
+      return null;
+    }
+    function getFlow() {
+      var params = new URLSearchParams(document.location.search.substr(1));
+      if (!"{flow}".match("{")) {
+        return "{flow}";
+      }
+      if (params.get("flow")) {
+        return params.get("flow");
+      }
+
+      if (getCookie("flow")) {
+        return getCookie("flow");
+      }
+
+      return null;
+    }
+
+    function getPixel() {
+      var params = new URLSearchParams(document.location.search.substr(1));
+      if (!"{pixel}".match("{")) {
+        return "{pixel}";
+      }
+      if (params.get("pixel")) {
+        return params.get("pixel");
+      }
+
+      if (getCookie("pixel")) {
+        return getCookie("pixel");
+      }
+
+      return null;
+    }
+
+    if (typeof URLSearchParams === "function") {
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var params = new URLSearchParams(document.location.search.substr(1));
+        var subid = getSubId();
+        var token = getToken();
+        var aff = getaf();
+        var flow = getFlow();
+        var pixel = getPixel();
+
+        params.set("_token", token);
+        setCookie("pixel", pixel);
+        setCookie("token", token);
+        setCookie("subid", subid);
+        setCookie("aff", aff);
+        setCookie("flow", flow);
+      });
+    }
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script type="application/javascript">
+    var date = new Date();
+    date.setTime(date.getTime() + 5 * 24 * 60 * 60 * 1000);
+    if (!"{pixel}".match("{")) {
+      document.cookie =
+        "pixel={pixel}; " + "expires=" + date.toUTCString() + "";
+    }
+
+    var matches = document.cookie.match(
+      new RegExp("(?:^|; )" + "pixel" + "=([^;]*)")
+    );
+    var pixel = matches ? decodeURIComponent(matches[1]) : undefined;
+
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", pixel);
+    fbq("track", "PageView");
+  </script>
   </head>
   <body>
     <div id="root"></div>

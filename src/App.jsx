@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import avatar from "../src/assets/avatar.jpg";
+import avatar from "../src/assets/firelogo.jpg";
 import tg from "../src/assets/icons/tg.svg";
 import wa from "../src/assets/icons/whatsApp.svg";
 import sessionId from "./utils/sessionId";
@@ -36,6 +36,7 @@ function App() {
   }, []);
   const tgHendller = (e) => {
     e.preventDefault();
+    fbq('track', 'Lead');
     if (Boolean(utm.split) === true) {
       const splitedAccs = utm.bot.split("-");
       const randomAcc =
@@ -46,6 +47,7 @@ function App() {
   };
   const waHendller = async (e) => {
     e.preventDefault();
+
     await saveHash(
       utm.ad,
       country.country,
@@ -55,6 +57,8 @@ function App() {
       utm.chatId
     );
 
+    await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId);
+    fbq("track", "Lead");
     window.location.href =
       "https://api.whatsapp.com/send/?phone=6283115600982&text=" +
       `Hi! Send this personal code and we will contact you soon - start_${session}`;
@@ -65,7 +69,7 @@ function App() {
       <div className="container">
         <div className="header">
           <img src={avatar} alt="" className="avatar" />
-          <h1>Traffic G</h1>
+          <h1>Hot Leads</h1>
           <h3 className="center">Contact us in one of the messengers:</h3>
         </div>
         <form id="form" className="form">
