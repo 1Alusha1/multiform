@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17305866810"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17305866810');
-</script>
-    <!-- Event snippet for 1 conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17305866810/oDb8CLeT2ekaELqkirxA',
-      'value': 10.0,
-      'currency': 'GBP',
-      'transaction_id': ''
-  });
-</script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hot Leads</title>
-    <script type="application/javascript">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot Leads</title>
+  <script type="application/javascript">
     function getCookie(name) {
       var v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
       return v ? v[2] : null;
@@ -144,6 +127,50 @@
       });
     }
   </script>
+
+  <script>
+    const getUtm = () => {
+      const params = new URLSearchParams(window.location.search);
+      const utmParams = {
+        gId: params.get("gId"),
+        gSend: params.get("gSend"),
+      };
+
+      // Удаляем пустые поля
+      Object.keys(utmParams).forEach((key) => {
+        if (!utmParams[key]) delete utmParams[key];
+      });
+
+      return utmParams;
+    };
+
+    const utm = getUtm();
+
+    if (utm.gId) {
+      // Динамически подключаем gtag.js
+      const script = document.createElement("script");
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${utm.gId}`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+        gtag('config', utm.gId);
+
+        // Если нужно — отправляем конверсию
+        gtag('event', 'conversion', {
+          'send_to': gSend,
+          'value': 10.0,
+          'currency': 'GBP',
+          'transaction_id': ''
+        });
+      };
+    }
+  </script>
+
   <!-- Facebook Pixel Code -->
   <script type="application/javascript">
     var date = new Date();
@@ -184,9 +211,11 @@
     fbq("init", pixel);
     fbq("track", "PageView");
   </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
