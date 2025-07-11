@@ -122,7 +122,7 @@ body {
 .hendlebutton img {
   width: 30px;
   height: 30px;
-  filter: invert();
+/*   filter: invert(); */
 }
 
 .form-control.error small {
@@ -338,11 +338,17 @@ body {
 }
 
 .hendlebutton.tg {
-  background-color: #22a8e7;
-  border-color: #22a8e7;
+/*   background-color: #22a8e7;
+  border-color: #22a8e7; */
+      background: #FFDE59;
+    border-color: #FFDE59;
+    color: #000;
 }
 
 .hendlebutton.wa {
-  background-color: #39c24d;
-  border-color: #39c24d; 
+/*   background-color: #39c24d;
+  border-color: #39c24d;  */
+    background: #FFDE59;
+    border-color: #FFDE59;
+    color: #000;
 }
