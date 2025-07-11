@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import avatar from "../src/assets/firelogo.jpg";
+import avatar from "../src/assets/crown.jpg";
 import tg from "../src/assets/icons/tg.svg";
 import wa from "../src/assets/icons/whatsApp.svg";
 import sessionId from "./utils/sessionId";
@@ -69,7 +69,7 @@ function App() {
       <div className="container">
         <div className="header">
           <img src={avatar} alt="" className="avatar" />
-          <h1>Hot Leads</h1>
+          <h1>FX Dealers</h1>
           <h3 className="center">Contact us in one of the messengers:</h3>
         </div>
         <form id="form" className="form">
