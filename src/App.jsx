@@ -57,7 +57,7 @@ function App() {
       utm.chatId
     );
 
-    await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId);
+    await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId,utm.chatId);
     fbq("track", "Lead");
     window.location.href =
       "https://api.whatsapp.com/send/?phone=6283115600982&text=" +
