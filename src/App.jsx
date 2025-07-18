@@ -102,6 +102,9 @@ function App() {
             Submit
           </button> */}
         </form>
+        <div className="privacy">
+          <a href="https://trafficg-privacy.netlify.app/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        </div>
       </div>
     </>
   );

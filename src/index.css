@@ -351,3 +351,10 @@ body {
     border-color: #FFDE59; */
     color: #fff;
 }
+
+.privacy{
+  text-align: center;
+}
+.privacy a{
+  color: #fff;
+}
