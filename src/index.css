@@ -122,7 +122,7 @@ body {
 .hendlebutton img {
   width: 30px;
   height: 30px;
-/*   filter: invert(); */
+  filter: invert();
 }
 
 .form-control.error small {
@@ -136,7 +136,6 @@ body {
 .btn-icon img {
   width: 20px;
   height: 20px;
-/*   filter: invert(); */
 }
 
 .form button {
@@ -338,17 +337,17 @@ body {
 }
 
 .hendlebutton.tg {
-/*   background-color: #22a8e7;
-  border-color: #22a8e7; */
-      background: #FFDE59;
-    border-color: #FFDE59;
-    color: #000;
+  background-color: #22a8e7;
+  border-color: #22a8e7;
+      /* background: #FFDE59;
+    border-color: #FFDE59; */
+    color: #fff;
 }
 
 .hendlebutton.wa {
-/*   background-color: #39c24d;
-  border-color: #39c24d;  */
-    background: #FFDE59;
-    border-color: #FFDE59;
-    color: #000;
+  background-color: #39c24d;
+  border-color: #39c24d; 
+    /* background: #FFDE59;
+    border-color: #FFDE59; */
+    color: #fff;
 }
