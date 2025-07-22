@@ -1,6 +1,3 @@
-import getIpLookUp from "../../src/fetch/getIpLookUp";
-import getUtmParams from "../../src/utils/getUtmParams";
-
 window.onload = function () {
   const errorItiMap = [
     "Неправильный номер",
