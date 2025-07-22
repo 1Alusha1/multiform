@@ -1,4 +1,4 @@
-export default () => {
+const getUtmParams = () => {
   var params = new URLSearchParams(window.location.search);
 
   var utmParams = {
