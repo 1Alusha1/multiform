@@ -36,7 +36,7 @@ function App() {
   }, []);
   const tgHendller = (e) => {
     e.preventDefault();
-    fbq('track', 'Lead');
+    fbq("track", "Lead");
     if (Boolean(utm.split) === true) {
       const splitedAccs = utm.bot.split("-");
       const randomAcc =
@@ -57,7 +57,14 @@ function App() {
       utm.chatId
     );
 
-    await saveHash(utm.ad, country.country, session, utm.sheet, utm.tableId,utm.chatId);
+    await saveHash(
+      utm.ad,
+      country.country,
+      session,
+      utm.sheet,
+      utm.tableId,
+      utm.chatId
+    );
     fbq("track", "Lead");
     window.location.href =
       "https://api.whatsapp.com/send/?phone=6283115600982&text=" +
@@ -97,13 +104,29 @@ function App() {
               <span className="main-content-btn"> WhatsApp</span>
             </button>
           </div>
-          {/* <div className="error-message"></div>
+          <div className="devider">
+            <p>OR</p>
+            <p>Just enter your phone number and we”ll contact you</p>
+          </div>
+          <div className="form-control">
+            <input type="hidden" name="code" id="code" value="" />
+            <input type="hidden" name="phonecc" id="phonecc" value="" />
+            <input type="tel" name="phone" id="phone" placeholder="" />
+            <span className="phone-eror-mess"></span>
+          </div>
+          <div className="error-message"></div>
           <button className="thx-message" type="submit">
             Submit
-          </button> */}
+          </button>
         </form>
         <div className="privacy">
-          <a href="https://trafficg-privacy.netlify.app/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a
+            href="https://trafficg-privacy.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Privacy Policy
+          </a>
         </div>
       </div>
     </>

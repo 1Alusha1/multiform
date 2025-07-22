@@ -55,7 +55,7 @@ body {
 }
 
 .form-control {
-  margin-bottom: 10px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -149,8 +149,11 @@ body {
   font-family: inherit;
   font-size: 16px;
   padding: 10px;
-  margin-top: 20px;
   width: 100%;
+}
+
+button {
+  margin-bottom: 10px;
 }
 
 .form button .main-content-btn {
@@ -339,22 +342,35 @@ body {
 .hendlebutton.tg {
   background-color: #22a8e7;
   border-color: #22a8e7;
-      /* background: #FFDE59;
+  /* background: #FFDE59;
     border-color: #FFDE59; */
-    color: #fff;
+  color: #fff;
 }
 
 .hendlebutton.wa {
   background-color: #39c24d;
-  border-color: #39c24d; 
-    /* background: #FFDE59;
+  border-color: #39c24d;
+  /* background: #FFDE59;
     border-color: #FFDE59; */
-    color: #fff;
+  color: #fff;
 }
 
-.privacy{
+.privacy {
   text-align: center;
 }
-.privacy a{
+.privacy a {
+  color: #fff;
+}
+
+.phone-eror-mess {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  color: red;
+}
+
+
+.devider{
+  text-align: center;
   color: #fff;
 }
