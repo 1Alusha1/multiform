@@ -77,7 +77,7 @@ function App() {
         <div className="header">
           <img src={avatar} alt="" className="avatar" />
           <h1>FX Dealers</h1>
-          <h3 className="center">Contact us in one of the messengers:</h3>
+          <h3 className="center">Get your leads here:</h3>
         </div>
         <form id="form" className="form">
           <div className="form-control">
